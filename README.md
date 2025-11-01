@@ -36,4 +36,11 @@ pip install ./llm-transparency-tool
 
 ### Function Vectors
 
+Our experiments with Function Vectors are presented in:
+
+* `notebooks/function_vector_experiments_llama_3.ipynb`
+* `notebooks/function_vector_experiments_pythia_12b.ipynb`
+
+All helper functions used to generate Function Vectors are located in `src/function_vectors.py`.
+
 ### Partial Sums

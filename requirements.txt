@@ -17,8 +17,8 @@ rich==14.2.0
 seaborn==0.13.2
 torch==2.7.0
 tqdm==4.67.1
-transformer_lens==2.16.1
-transformers==4.51.1
+transformer_lens==2.9.0
+transformers==4.50.3
 typing_extensions==4.15.0
 wandb==0.16.6
 jupyter==1.1.1
