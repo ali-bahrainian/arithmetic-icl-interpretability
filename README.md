@@ -27,12 +27,30 @@ pip install ./llm-transparency-tool
 
 ## Project Structure
 
-
+```
+.
+├── notebooks
+│   ├── function_vector_experiments_llama_3.ipynb LLama-3.1-8B FV experiments
+│   ├── function_vector_experiments_pythia_12b.ipynb Pythia-12B FV experiments
+│   ├── information_flow_routes_experiments_llama_3.ipynb # Llama-3.1-8B Information Flow Routes
+│   ├── information_flow_routes_experiments_opt_6_7b.ipynb # OPT-6.7B Information Flow Routes
+│   ├── patching_experiments_llama_3.ipynb # Llama-3.1-8B Patching experiments (TBD)
+│   ├── patching_experiments_pythia_12b.ipynb # Pythia-12B Patching experiments (TBD)
+├── README.md
+├── requirements.txt
+└── src
+    ├── component.py # FV supporting class
+    ├── function_vectors.py # FV supporting functions
+    ├── generate_data.py # Data generation scripts (TBD)
+    ├── information_flow_routes.py # Information Flow Routes supplementary
+    ├── patching.py # Patching supplementary
+    └── utils.py # General utility functions
+```
 
 ## Dataset Generation
 
-All data used in our experiments is available here:
-**https://drive.google.com/drive/folders/1rZDprv4_IjZS_FV1Kx8PMyD2EKiqPHvh?usp=sharing**
+All data used in our experiments is available here: **[Google Drive link](https://drive.google.com/drive/folders/1rZDprv4_IjZS_FV1Kx8PMyD2EKiqPHvh?usp=sharing)**
+Download the necessary files and put them into the `data/` directory.
 
 *Details on how to generate these datasets will be provided soon.*
 
