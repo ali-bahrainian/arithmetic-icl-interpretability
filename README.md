@@ -3,9 +3,10 @@
 This repository will host the code for reproducing the experiments presented in our paper:
 > **Interpretability Analysis of Arithmetic In-Context Learning in Large Language Models**
 > Gregory Polyakov, Christian Hepting, Carsten Eickhoff, Seyed Ali Bahrainian
-> *To appear at EMNLP 2025*
+> https://aclanthology.org/2025.emnlp-main.92/
+> EMNLP 2025
 
-We are currently preparing the public release. The repository will be updated soon.
+*We are currently preparing the public release. The repository is being updated*
 
 ## Installation
 
@@ -17,7 +18,7 @@ Install the main dependencies using `pip`:
 pip install -r requirements.txt
 ```
 
-To use the **information flow routes** approach, you also need to install the `llm-transparency-tool` directly from its repository.
+To use the **information flow routes** approach, it is also necessary to install the `llm-transparency-tool` directly from its repository.
 
 ```bash
 git clone https://github.com/facebookresearch/llm-transparency-tool.git
@@ -26,13 +27,38 @@ pip install ./llm-transparency-tool
 
 ## Project Structure
 
+
+
 ## Dataset Generation
+
+All data used in our experiments is available here:
+**https://drive.google.com/drive/folders/1rZDprv4_IjZS_FV1Kx8PMyD2EKiqPHvh?usp=sharing**
+
+*Details on how to generate these datasets will be provided soon.*
 
 ## Main Experiments
 
 ### Activation Patching
 
+<!-- Our experiments with Activation Patching are presented in:
+
+* `notebooks/patching_experiments_llama_3.ipynb`
+* `notebooks/patching_experiments_pythia_12b.ipynb` -->
+
+*To be added soon.*
+
+### Activation Patching with Counterfactuals
+
+*To be added soon.*
+
 ### Information Flow Routes
+
+Our experiments with Information Flow Analysis are presented in:
+
+* `notebooks/information_flow_routes_experiments_llama_3.ipynb`
+* `notebooks/information_flow_routes_experiments_opt_6_7b.ipynb`
+
+All helper functions used to generate Information Flow Graphs are located in `src/information_flow_routes.py`.
 
 ### Function Vectors
 
@@ -43,4 +69,9 @@ Our experiments with Function Vectors are presented in:
 
 All helper functions used to generate Function Vectors are located in `src/function_vectors.py`.
 
-### Partial Sums
+### Partial Sums Representations
+
+*To be added soon.*
+
+
+
