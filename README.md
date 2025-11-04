@@ -4,7 +4,7 @@ This repository will host the code for reproducing the experiments presented in 
 > **Interpretability Analysis of Arithmetic In-Context Learning in Large Language Models**
 > Gregory Polyakov, Christian Hepting, Carsten Eickhoff, Seyed Ali Bahrainian
 > https://aclanthology.org/2025.emnlp-main.92/
-> EMNLP 2025
+> EMNLP 2025 
 
 *We are currently preparing the public release. The repository is being updated*
 
@@ -43,13 +43,14 @@ pip install ./llm-transparency-tool
     ├── function_vectors.py # FV supporting functions
     ├── generate_data.py # Data generation scripts (TBD)
     ├── information_flow_routes.py # Information Flow Routes supplementary
-    ├── patching.py # Patching supplementary
+    ├── patching.py # Patching supplementary (TBD)
     └── utils.py # General utility functions
 ```
 
 ## Dataset Generation
 
 All data used in our experiments is available here: **[Google Drive link](https://drive.google.com/drive/folders/1rZDprv4_IjZS_FV1Kx8PMyD2EKiqPHvh?usp=sharing)**
+
 Download the necessary files and put them into the `data/` directory.
 
 *Details on how to generate these datasets will be provided soon.*
@@ -71,7 +72,7 @@ Download the necessary files and put them into the `data/` directory.
 
 ### Information Flow Routes
 
-Our experiments with Information Flow Analysis are presented in:
+Our Information Flow Analysis experiments are presented in:
 
 * `notebooks/information_flow_routes_experiments_llama_3.ipynb`
 * `notebooks/information_flow_routes_experiments_opt_6_7b.ipynb`
