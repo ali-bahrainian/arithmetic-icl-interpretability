@@ -36,6 +36,7 @@ pip install ./llm-transparency-tool
 │   ├── information_flow_routes_experiments_opt_6_7b.ipynb # OPT-6.7B Information Flow Routes
 │   ├── patching_experiments_llama_3.ipynb # Llama-3.1-8B Patching experiments (TBD)
 │   ├── patching_experiments_pythia_12b.ipynb # Pythia-12B Patching experiments (TBD)
+│   └── partial_sums_experiments_pythia_12b.ipynb # Pythia-12B Partial Sums experiments
 ├── README.md
 ├── requirements.txt
 └── src
@@ -92,9 +93,9 @@ All helper functions used to generate Function Vectors are located in `src/funct
 
 *To be added soon.*
 
-<!-- Our experiments with probing for Partial Sums Representations are presented in: 
+Our experiments with probing for partial sums representations are presented in: 
 
-* `notebooks/partial_sums_experiments_pythia_12b.ipynb` -->
+* `notebooks/partial_sums_experiments_pythia_12b.ipynb`
 
 All helper functions used to probe for Partial Sums Representations are located in `src/partial_sums.py`.
 
