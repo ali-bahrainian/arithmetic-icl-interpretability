@@ -92,8 +92,6 @@ All helper functions used to generate Function Vectors are located in `src/funct
 
 ### Partial Sums Representations
 
-*To be added soon.*
-
 Our experiments with probing for partial sums representations are presented in: 
 
 * `notebooks/partial_sums_experiments_pythia_12b.ipynb`
