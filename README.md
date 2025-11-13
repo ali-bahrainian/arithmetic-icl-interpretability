@@ -45,6 +45,7 @@ pip install ./llm-transparency-tool
     ├── generate_data.py # Data generation scripts (TBD)
     ├── information_flow_routes.py # Information Flow Routes supplementary
     ├── patching.py # Patching supplementary (TBD)
+    ├── partial_sums.py # Partial sums supplementary
     └── utils.py # General utility functions
 ```
 
