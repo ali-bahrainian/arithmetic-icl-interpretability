@@ -61,9 +61,11 @@ Download the necessary files and put them into the `data/` directory.
 
 ### Activation Patching
 
-Our experiments with Activation Patching are presented in:
+Our experiments with activation patching are presented in:
 
 * `notebooks/patching_experiments_pythia_12b.ipynb`
+
+All helper functions used to perform activation patching are located in `src/patching.py`.
 
 ### Activation Patching with Corrupted Prompts
 
