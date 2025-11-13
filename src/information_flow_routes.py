@@ -42,8 +42,6 @@ def generate_graphs(model, dataset, results, threshold=0.04):
 
 def take_operators_operands_nodes_from_contribution_graphs(contribution_graphs, tokenizer):
     # TODO: write docstring, improve codestyle, add comments
-    all_operators = {'+', '-', '*', 'times', 'minus', 'plus'}
-    all_equal_signs = {'=', 'is'}
 
     contribution_graphs_operands_operators = []
 
@@ -55,7 +53,7 @@ def take_operators_operands_nodes_from_contribution_graphs(contribution_graphs, 
         operands_operators_positions = []
         for i, token in enumerate(tokens):
             token_decoded = tokenizer.decode(token)
-            if token_decoded.strip() in all_operators or token_decoded.strip() in all_equal_signs or token_decoded.strip().isnumeric():
+            if token_decoded.strip() in OPERATORS or token_decoded.strip() in EQUAL_SIGNS or token_decoded.strip().isnumeric():
                     operands_operators_positions.append(i)
         
         operands_operators_positions.append(len(tokens) - 1)

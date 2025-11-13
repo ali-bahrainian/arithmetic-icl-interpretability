@@ -132,7 +132,7 @@ def obtain_all_ice_variants(
 
     for ice_examples, task_prompt_operands, task_prompt, template in dataset:
         ice_prompts = [example[-1] for example in ice_examples]
-        expected_answer = int(str(task_prompt_operands[-1]))
+        expected_answer = str(task_prompt_operands[-1])
 
         no_ice.append((task_prompt, expected_answer))
         single_ice.append((join_ice_segments(ice_prompts, count=1) + task_prompt, expected_answer))
@@ -333,28 +333,3 @@ def evaluate(
         else:
             raise ValueError(f"Unknown result_format: {result_format}")
     return accuracies
-
-
-def collect_partial_sums(dataset: Sequence[Tuple[str, int]], ice: bool = False, idx: int = 0, llama: bool = False) -> List[Tuple[Tuple[str, int], Tuple[str, int], Tuple[str, int]]]:
-    partial_sums_list = []
-    for entry, ans in dataset:
-        lines = entry.split(". ")
-        if not ice:
-            curr_prompt = lines[-1]
-        else:
-            curr_prompt = lines[idx]        
-        question_parts = curr_prompt.strip().split("=")
-        q_left_side = question_parts[0].strip()
-        q_a, q_b, q_c = [int(x) for x in q_left_side.split("+")]
-
-        if not llama:
-            partial_sums = ((f'{q_a} + {q_b} = {q_a + q_b}', q_a + q_b),
-                            (f'{q_b} + {q_c} = {q_b + q_c}', q_b + q_c), 
-                            (curr_prompt, q_a + q_b + q_c))
-        else:
-            partial_sums = ((f'{q_a}+{q_b}={q_a + q_b}', q_a + q_b),
-                            (f'{q_b}+{q_c}={q_b + q_c}', q_b + q_c), 
-                            (curr_prompt, q_a + q_b + q_c))
-        partial_sums_list.append(partial_sums)
-
-    return partial_sums_list

@@ -35,7 +35,7 @@ pip install ./llm-transparency-tool
 │   ├── information_flow_routes_experiments_llama_3.ipynb # Llama-3.1-8B Information Flow Routes
 │   ├── information_flow_routes_experiments_opt_6_7b.ipynb # OPT-6.7B Information Flow Routes
 │   ├── patching_experiments_llama_3.ipynb # Llama-3.1-8B Patching experiments (TBD)
-│   ├── patching_experiments_pythia_12b.ipynb # Pythia-12B Patching experiments (TBD)
+│   ├── patching_experiments_pythia_12b.ipynb # Pythia-12B Patching experiments
 │   └── partial_sums_experiments_pythia_12b.ipynb # Pythia-12B Partial Sums experiments
 ├── README.md
 ├── requirements.txt
@@ -44,7 +44,7 @@ pip install ./llm-transparency-tool
     ├── function_vectors.py # FV supporting functions
     ├── generate_data.py # Data generation scripts (TBD)
     ├── information_flow_routes.py # Information Flow Routes supplementary
-    ├── patching.py # Patching supplementary (TBD)
+    ├── patching.py # Patching supplementary
     ├── partial_sums.py # Partial sums supplementary
     └── utils.py # General utility functions
 ```
@@ -61,12 +61,9 @@ Download the necessary files and put them into the `data/` directory.
 
 ### Activation Patching
 
-<!-- Our experiments with Activation Patching are presented in:
+Our experiments with Activation Patching are presented in:
 
-* `notebooks/patching_experiments_llama_3.ipynb`
-* `notebooks/patching_experiments_pythia_12b.ipynb` -->
-
-*To be added soon.*
+* `notebooks/patching_experiments_pythia_12b.ipynb`
 
 ### Activation Patching with Corrupted Prompts
 
