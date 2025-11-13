@@ -66,7 +66,7 @@ Download the necessary files and put them into the `data/` directory.
 
 *To be added soon.*
 
-### Activation Patching with Counterfactuals
+### Activation Patching with Corrupted Prompts
 
 *To be added soon.*
 
@@ -92,5 +92,24 @@ All helper functions used to generate Function Vectors are located in `src/funct
 
 *To be added soon.*
 
+<!-- Our experiments with probing for Partial Sums Representations are presented in: 
 
+* `notebooks/partial_sums_experiments_pythia_12b.ipynb` -->
 
+All helper functions used to probe for Partial Sums Representations are located in `src/partial_sums.py`.
+
+## Citation
+
+If you find our paper or code helpful, please cite our paper:
+```
+@inproceedings{polyakov2025interpretability,
+  title={Interpretability Analysis of Arithmetic In-Context Learning in Large Language Models},
+  author={Polyakov, Gregory and 
+    Hepting, Christian and 
+    Eickhoff, Carsten and 
+    Bahrainian, Seyed Ali},
+  booktitle={Proceedings of the 2025 Conference on Empirical Methods in Natural Language Processing},
+  pages={1758--1777},
+  year={2025}
+}
+```

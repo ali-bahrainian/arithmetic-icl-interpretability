@@ -79,6 +79,29 @@ def tokenize(
     return torch.tensor(tokenized).unsqueeze(0)
 
 
+def tokenize_and_pad_with_whitespace(
+    tokenizer: PreTrainedTokenizerBase, text: str, target_len: int, prepend_bos: bool = True
+) -> torch.Tensor:
+    """
+    Tokenize the input text and pad it with whitespace tokens to reach the target length.
+
+    Args:
+        tokenizer: The tokenizer to use for tokenization.
+        text: The input text to tokenize.
+        target_len: The desired length of the tokenized output.
+        prepend_bos: Whether to prepend the BOS token.
+
+    Returns:
+        A tensor containing the tokenized and padded input.
+    """
+    tokenized = tokenizer(text, add_special_tokens=False)['input_ids']
+    if prepend_bos:
+        tokenized = [tokenizer.bos_token_id] + tokenized
+    whitespace_token = tokenizer(" ", add_special_tokens=False)['input_ids'][0]
+    tokenized = [whitespace_token] * (target_len - len(tokenized)) + tokenized
+    return torch.tensor(tokenized).unsqueeze(0)
+
+
 def obtain_all_ice_variants(
     dataset: Sequence[Tuple[Sequence[Tuple[str, str]], Sequence[str], str]]
 ) -> Tuple[List[Tuple[str, int]], List[Tuple[str, int]], List[Tuple[str, int]], List[Tuple[str, int]]]:
@@ -179,6 +202,36 @@ def predict_result_transformerlens(
         decoded_token = tokenizer.decode(token_id, skip_special_tokens=True)
         generated_tokens.append(decoded_token)
         
+    return generated_tokens
+
+
+def predict_result_from_tokens(
+    tokenizer: PreTrainedTokenizerBase,
+    model: HookedTransformer, 
+    tokenized_prompts: torch.Tensor
+) -> List[str]:
+    """
+    Decode the model’s top-1 prediction for each tokenized prompt.
+
+    Args:
+        model: HookedTransformer instance of the model.
+        tokenized_prompts: Batched tokenized prompts as a tensor.
+
+    Returns:
+        List of decoded strings containing the generated tokens per prompt.
+    """
+    device = model.cfg.device
+    logits = model(tokenized_prompts.to(device))
+    target_logits = logits[:, -1, :].cpu()
+    probs = torch.nn.functional.softmax(target_logits, dim=-1)
+    _, top_indices = torch.topk(probs, 1, dim=-1)
+
+    generated_tokens = []
+    for i in range(top_indices.shape[0]):
+        token_id = top_indices[i, 0].item()
+        decoded_token = tokenizer.decode(token_id, skip_special_tokens=True)
+        generated_tokens.append(decoded_token)
+
     return generated_tokens
 
 
