@@ -1,12 +1,10 @@
 # Interpretability Analysis of Arithmetic In-Context Learning in Large Language Models
 
-This repository will host the code for reproducing the experiments presented in our paper:
+This repository hosts the code for reproducing the experiments presented in our paper:
 > **Interpretability Analysis of Arithmetic In-Context Learning in Large Language Models**
 > Gregory Polyakov, Christian Hepting, Carsten Eickhoff, Seyed Ali Bahrainian
 > https://aclanthology.org/2025.emnlp-main.92/
 > EMNLP 2025 
-
-*We are currently preparing the public release. The repository is being updated*
 
 ## Installation
 
